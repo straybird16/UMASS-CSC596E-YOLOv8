@@ -1,0 +1,9 @@
+# ignore ALL files in ANY directory ending with "data" and "datasets"
+*data/
+*datasets/
+# ignore ALL image FILES
+*.jpg
+*.png
+*.jpeg
+# ignore runs
+runs/
