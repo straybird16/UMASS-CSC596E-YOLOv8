@@ -3,7 +3,9 @@ import matplotlib.pyplot as plt
 
 from PIL import Image, ImageDraw
 from sklearn.model_selection import train_test_split
+from ultralytics import YOLO
 
+import json
 import shutil
 import random
 import os
@@ -156,3 +158,7 @@ def partition_dataset(path_images:str='temp_data/images', path_annotations:str='
     move_files_to_folder(test_annotations, os.path.join(path_annotations, 'test'))
     print("Moved test annotations to ", os.path.join(path_annotations, 'test'))
 
+def myTrain(model, data:str='temp_data/temp_data.yaml', hyp:str='temp_data/hyp.txt'):
+    args = json.loads(open(hyp).read())
+    args['data'] = data
+    return model.train(**args)
