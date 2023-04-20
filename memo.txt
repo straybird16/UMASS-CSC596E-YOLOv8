@@ -1,0 +1,24 @@
+1. ToDo:
+
+    (1) Add 3 different rotations to the tranining (is it necessary?) to let the model generalize better.
+    (2) Add more SnapChat GUI elements (e.g., video call UI) to the image generation and train with them
+    (3) Fully randomize the text generation in textbars & GUI elements that may contain text.
+    (4) Realize the removal of common phone GUI elements (e.g., all sorts of sidebars, topbars, iphone white dots, etc.) 
+
+
+2. Results and Findings
+
+    0.97 F1 score at 0.64 confidence level (I'd say it's more than enough. But of course we need to accomplish more
+    complicated tasks)
+
+    (1) Small model seems to perform considerably better than the nano model, while taking only a little more time to train.
+        (have to verify this with more training epochs, may be due to other factors)
+    (2) Transfer learning from existing model is also faster than training from scratch.
+    (3) Till now, the typical training time for nano model on 1000 400x300 PNG images over 10 epochs is 100 min; 
+        
+
+3. Thoughts
+
+    (1) Because of how well the YOLO model performs so far and the simplicity of adding elements 
+        for the existing model to learn, we can even consider adding a feature that automates 
+        the whole process and allows users to specify elements they want the model to remove automatically.
